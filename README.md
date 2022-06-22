@@ -24,5 +24,4 @@ It is not legal to download videos from YouTube unless the video is allowed to b
 ### Pull requests and issues
   - Feel free to raise issues if something is not working properly. 
   - Feel free to fork the repository and raise pull requests with your modifications. If it is a good addition then it would be merged along with due credits.
-  
-Happy coding!
+

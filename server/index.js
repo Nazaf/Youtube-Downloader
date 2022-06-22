@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
     res.sendFile('index.html', { root: './' });
 })
 
-app.get('/download', (req, res) => {
+app.get('/download', async (req, res) => {
     var url = req.query.url;
-    res.header("Content-Disposition", 'attachment; filename="Video.mp4');
-    ytdl(url, {format: 'mp4'}).pipe(res);
+    const info = await ytdl.getInfo(url)
+    res.header("Content-Disposition", `attachment; filename=${info.videoDetails.title}-Video.mp4`);
+    await ytdl(url, {format: 'mp4'}).pipe(res);
 });
